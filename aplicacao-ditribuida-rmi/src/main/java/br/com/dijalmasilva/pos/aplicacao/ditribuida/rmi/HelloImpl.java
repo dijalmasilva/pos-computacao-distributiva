@@ -21,6 +21,6 @@ public class HelloImpl extends UnicastRemoteObject implements Hello, Serializabl
 
     @Override
     public String helloTo(String name) throws RemoteException {
-        return "Olá, " + name + "! \n Bem vindo à aplicação RMI!";
+        return "Hello, " + name + "! \n Welcome to application in RMI!";
     }
 }
