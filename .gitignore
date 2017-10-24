@@ -21,3 +21,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /aplicacao-ditribuida-corba/target/
+/Application-RMI/RMI-Register/target/
+/Application-RMI/RMI-Server/target/
+/Application-RMI/RMI-Client/target/

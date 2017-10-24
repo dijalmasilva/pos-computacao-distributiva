@@ -1,0 +1,33 @@
+version: "2"
+services:
+  register:
+    container_name: register-rmi
+    image: pos/register-rmi
+    build: ./RMI-Register
+    ports:
+      - "9092:9091"
+    expose:
+      - 9092
+  server:
+    container_name: server-rmi
+    image: pos/server-rmi
+    build: ./RMI-Server
+    depends_on:
+      - "register"
+    links:
+      - "register:register-host"
+
+  client:
+    container_name: client-rmi
+    image: pos/client-rmi
+    build: ./RMI-Client
+    depends_on:
+      - "server"
+      - "register"
+    links:
+      - "register:register-host"
+
+networks:
+  default:
+    external:
+      name: ativ-rmi

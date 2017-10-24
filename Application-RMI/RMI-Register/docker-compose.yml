@@ -1,0 +1,8 @@
+version: "2"
+services:
+    register:
+        container_name: register-rmi
+        build: .
+        image: pos/register-rmi
+        ports:
+            - "9092:9091"
